@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anil Mathan | Portfolio</title>
+  <style>
+    /* Google Fonts Import */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #0066ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #003bb3;
+    }
+
+    header {
+      background: #0a2540;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .nav-links li a {
+      color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-text {
+      flex: 1 1 320px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      color: #0a2540;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      max-width: 420px;
+    }
+
+    .btn-primary {
+      background-color: #0066ff;
+      color: #fff;
+      padding: 0.75rem 1.75rem;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 8px rgb(0 102 255 / 0.4);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #004bb3;
+    }
+
+    .hero-img {
+      flex: 1 1 250px;
+      max-width: 250px;
+      border-radius: 130px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+    }
+
+    .hero-img img {
+      width: 100%;
+      display: block;
+      border-radius: 130px;
+    }
+
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #0a2540;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #0066ff;
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+
+    .about p {
+      font-size: 1rem;
+      color: #444;
+      max-width: 700px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgb(0 0 0 / 0.1);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgb(0 0 0 / 0.15);
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #0a2540;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-desc {
+      color: #666;
+      font-size: 0.95rem;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
+
+    .project-link {
+      align-self: flex-start;
+      padding: 0.5rem 1rem;
+      background-color: #0066ff;
+      color: #fff;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .project-link:hover {
+      background-color: #004bb3;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .skill-item {
+      background: #e1eaff;
+      color: #004bb3;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgb(0 75 179 / 0.35);
+    }
+
+    .contact-form {
+      max-width: 480px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgb(0 0 0 / 0.08);
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #0a2540;
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      border: 1.8px solid #ccc;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #0066ff;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn-submit {
+      background-color: #0066ff;
+      color: #fff;
+      padding: 0.75rem 2rem;
+      border-radius: 40px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 12px rgb(0 102 255 / 0.5);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #004bb3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 2rem;
+      background: #0a2540;
+      color: #fff;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text,
+      .hero-img {
+        flex: 1 1 100%;
+      }
+
+      .hero-text h1 {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Anil Mathan</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Hello, I'm Anil Mathan</h1>
+        <p>A passionate developer crafting modern, user-friendly websites and applications. Welcome to my portfolio
+          where I showcase my skills and projects.</p>
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+      </div>
+      <div class="hero-img">
+        <img src="Anil Portfolio.jpg" alt="Anil Mathan Profile Photo" />
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p>
+        I am an enthusiastic full-stack developer with a strong foundation in web technologies, eager to build impactful
+        projects that solve real-world problems. I constantly learn and evolve, aiming to create clean and efficient
+        code.
+      </p>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-title">Portfolio Website</div>
+          <div class="project-desc">A personal portfolio website built using HTML, CSS, and JavaScript showcasing my
+            projects and skills.</div>
+          <a class="project-link" href="https://github.com/anilmathan" target="_blank" rel="noopener">View on
+            GitHub</a>
+        </div>
+        <div class="project-card">
+          <div class="project-title">Todo App</div>
+          <div class="project-desc">A todo application with task management and local storage persistence, built with
+            React.js.</div>
+          <a class="project-link" href="https://github.com/anilmathan/todo-app" target="_blank" rel="noopener">View on
+            GitHub</a>
+        </div>
+        <div class="project-card">
+          <div class="project-title">Weather Dashboard</div>
+          <div class="project-desc">Weather forecasting dashboard using OpenWeatherMap API and modern JavaScript.</div>
+          <a class="project-link" href="https://github.com/anilmathan/weather-dashboard" target="_blank"
+            rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <div class="skill-item">HTML5</div>
+        <div class="skill-item">CSS3</div>
+        <div class="skill-item">JavaScript (ES6+)</div>
+        <div class="skill-item">React.js</div>
+        <div class="skill-item">Node.js</div>
+        <div class="skill-item">Git & GitHub</div>
+        <div class="skill-item">REST APIs</div>
+        <div class="skill-item">JAVA</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <form class="contact-form" onsubmit="sendEmail(event)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email address" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+        </div>
+        <button class="btn-submit" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Anil Mathan. All rights reserved.
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const targetID = anchor.getAttribute('href').substring(1);
+        const target = document.getElementById(targetID);
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 60,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Simple dummy email sending simulation
+    function sendEmail(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (name && email && message) {
+        alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+        e.target.reset();
+      } else {
+        alert('Please fill out all fields.');
+      }
+    }
+  </script>
+
+</body>
+
+</html>
